@@ -8,4 +8,42 @@
     <item name="colorAccent">@color/colorAccent</item>
   </style>
 
+  <style name="ProgressLoader">
+    <item name="android:layout_gravity">center</item>
+    <item name="android:layout_width">@dimen/progress_size</item>
+    <item name="android:layout_height">@dimen/progress_size</item>
+  </style>
+
+  <style name="error_image_view">
+    <item name="android:scaleType">fitXY</item>
+    <item name="android:layout_width">@dimen/error_image_height</item>
+    <item name="android:layout_height">@dimen/error_image_width</item>
+    <item name="android:layout_gravity">center</item>
+  </style>
+
+  <style name="AuthErrorMessage">
+    <item name="android:visibility">gone</item>
+    <item name="android:layout_gravity">center</item>
+    <item name="android:layout_height">wrap_content</item>
+    <item name="android:layout_width">wrap_content</item>
+    <item name="android:textColor">@color/colorTextDefaultLight</item>
+    <item name="android:textSize">20sp</item>
+  </style>
+
+  <style name="RetryButton" parent="Widget.AppCompat.Button.Colored">
+    <item name="android:layout_height">wrap_content</item>
+    <item name="android:layout_width">wrap_content</item>
+    <item name="colorButtonNormal">@color/colorPrimary</item>
+    <item name="android:layout_gravity">center</item>
+    <item name="android:text">"Retry"</item>
+    <item name="android:textAllCaps">false</item>
+    <item name="android:visibility">gone</item>
+    <item name="android:textSize">@dimen/retry_text_size</item>
+    <item name="android:padding">10dp</item>
+    <item name="android:layout_marginTop">@dimen/auth_input_margin_top</item>
+  </style>
+
+
+
+
 </resources>

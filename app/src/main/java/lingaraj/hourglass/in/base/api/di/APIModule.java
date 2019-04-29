@@ -8,6 +8,7 @@ import retrofit2.Retrofit;
 
 @Module
 public abstract class APIModule {
+
   @Singleton
   @Provides
   static APIRouter provideAPIRouter(Retrofit retrofit){

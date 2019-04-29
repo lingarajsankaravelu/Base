@@ -1,6 +1,173 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <color name="colorPrimary">#008577</color>
-  <color name="colorPrimaryDark">#00574B</color>
-  <color name="colorAccent">#D81B60</color>
+  <!--<color name="colorPrimary">#EEE7E0</color>-->
+  <!--<color name="colorPrimaryDark">#F5D1C6</color>-->
+  <!--<color name="colorAccent">#334E70</color>-->
+  <!--<color name="colorButtons">#63CCC8</color>-->
+  <!--<color name="white">#FFFFFF</color>-->
+
+  <color name="colorPrimary">#009688</color>
+  <color name="colorPrimaryDark">#00786D</color>
+  <color name="colorAccent">#009688</color>
+  <color name="colorAccentLight">#77009688</color>
+  <color name="colorAccentPink">#FF4081</color>
+  <!--<color name="colorAccent">#442C2E</color>-->
+  <color name="text_dark_blue">#334E70</color>
+  <!--<color name="colorButtons">#63CCC8</color>-->
+  <color name="colorButtons">#63CCC8</color>
+  <color name="app_background">#F1F1F2</color>
+  <color name="app_blue">#63CCC8</color>
+  <color name="dark_app_blue">#59B8B4</color>
+  <color name="icon_blue">#00ACC1</color>
+  <color name="white">#FFFFFF</color>
+  <color name="beige_background">#EEE7E0</color>
+  <color name="grey_100">#F5F5F5</color>
+  <color name="grey_350">#c9c9c9</color>
+  <color name="icon_black">#262626</color>
+  <color name="icon_grey">#C7C7C7</color>
+
+
+  <color name="colorTextDefault">#616161</color>
+  <color name="colorTextDefaultLight">#9E9E9E</color>
+  <color name="colorError">#F44336</color>
+  <color name="editTextHint">#616161</color>
+  <color name="controlColorNormal">#757575</color>
+
+  <!-- used only in two place, check helper class, colos shared betweeen khoj
+  and screen plz be cautious before changing !-->
+  <color name="classColor1">#F44336</color>
+  <color name="classColor2">#3F51B5</color>
+  <color name="classColor3">#009688</color>
+  <color name="classColor4">#FF9800</color>
+  <color name="classColor5">#E91E63</color>
+  <color name="classColor6">#2196F3</color>
+  <color name="classColor7">#4CAF50</color>
+  <color name="classColor8">#FF5722</color>
+  <color name="classColor9">#9C27B0</color>
+  <color name="light_classColor9">#339C27B0</color>
+  <color name="classColor10">#03A9F4</color>
+  <color name="classColor11">#8BC34A</color>
+  <color name="classColor12">#795548</color>
+  <color name="classColor13">#673AB7</color>
+  <color name="classColor14">#00BCD4</color>
+  <color name="classColor15">#FFC107</color>
+  <color name="classColor16">#607D8B</color>
+  <color name="classColorDefault">#9E9E9E</color>
+  <!-- used only in one place, check helper class !-->
+
+
+
+  <color name="assessed_blue">#2096F3</color>
+  <color name="assessed_light_blue">#40a5f5</color>
+  <color name="option_blue">#a040a5f5</color>
+  <color name="assessed_lighter_blue">#D2EAFD</color>
+  <color name="assessed_dark_blue">#135A92</color>
+  <color name="black_overlay">#66000000</color>
+  <color name="black">#000000</color>
+  <color name="fully_transparent_white">#00ffffff</color>
+  <color name="transparent_white">#abffffff</color>
+  <color name="transluscent_white">#2cffffff</color>
+
+  <color name="grey_10">#EEEEEE</color>
+
+  <color name="red">#E04F5F</color>
+  <color name="grey_background">#99F5F5F5</color>
+  <color name="lighter_grey_background">#F7F7F7</color>
+  <color name="grey_background_darker">#E5E5F5</color>
+  <color name="hint_grey">#8C8D99</color>
+  <color name="text_black">#232F34</color>
+  <color name="text_grey">#666666</color>
+  <color name="divider_grey">#E0E0E0</color>
+
+  <color name="green">#00954A</color>
+  <color name="light_green">#A4DF56</color>
+  <color name="lighter_green">#D7E23C</color>
+  <color name="light_orange">#FFA435</color>
+  <color name="orange">#E6781E</color>
+  <color name="dark_orange">#B86018</color>
+  <color name="lighter_orange">#f9aa33</color>
+  <color name="light_blue">#B3E5FC</color>
+
+  <color name="note_color">#FFC107</color>
+
+  <color name="assessedColorPrimary">#00A8E1</color>
+  <color name="assessedColorPrimaryDark">#007CBA</color>
+  <color name="assessedColorAccent">#00A8E1</color>
+  <color name="colorTextPrimary">#FFFFFF</color>
+
+
+  <color name="mathematics">#865FC1</color>
+  <color name="social_science">#FFB72B</color>
+  <color name="biology">#7ACBBD</color>
+  <color name="chemistry">#46C4F3</color>
+  <color name="english">#FF8737</color>
+  <color name="physics">#E04F5F</color>
+  <color name="sanskrit">#FFFFFF</color>
+
+  <color name="mathematics_dark">#5E4387</color>
+  <color name="social_science_dark">#CC9222</color>
+  <color name="biology_dark">#558E84</color>
+  <color name="chemistry_dark">#389DC2</color>
+  <color name="english_dark">#CC6C2C</color>
+  <color name="physics_dark">#B33F4C</color>
+  <color name="sanskrit_dark">#FFFFFF</color>
+
+  <color name="light_mathematics">#33865FC1</color>
+  <color name="light_social_science">#66FFB72B</color>
+  <color name="light_biology">#337ACBBD</color>
+  <color name="light_chemistry">#3346C4F3</color>
+  <color name="light_english">#33FF8737</color>
+  <color name="light_physics">#33E04F5F</color>
+  <color name="light_sanskrit">#FFFFFF</color>
+
+
+  <color name="light_beige_background">#FAF8F5</color>
+  <color name="indigo">#3f51b5</color>
+  <color name="light_indigo">#668c9eff</color>
+  <color name="lighter_indigo">#338c9eff</color>
+  <color name="transparent_black">#99000000</color>
+
+  <color name="blue_grey_700">#455a64</color>
+  <color name="indigo_700">#303f9f</color>
+  <color name="indigo_500">#3f51b5</color>
+  <color name="youtube_red">#FF0000</color>
+
+
+  <color name="yellow">#FFCC00</color>
+  <color name="yellow_99">#99FFCC00</color>
+  <color name="red_menu_background">#99E04F5F</color>
+  <color name="dark_grey">#555555</color>
+  <color name="light_dark_grey">#22555555</color>
+  <color name="lighter_dark_grey">#05555555</color>
+
+  <color name="deep_purple">#3700B3</color>
+  <color name="purple_500">#6200EE</color>
+  <color name="teal_200">#03DAc5</color>
+  <color name="grey_200">#D9D9D9</color>
+
+
+  <color name="difficulty_1">#7db52a</color>
+  <color name="difficulty_2">#8e9c2e</color>
+  <color name="difficulty_3">#96902f</color>
+  <color name="difficulty_4">#9e8431</color>
+  <color name="difficulty_5">#a67733</color>
+  <color name="difficulty_6">#ae6b35</color>
+  <color name="difficulty_7">#b75f37</color>
+  <color name="difficulty_8">#bf5239</color>
+  <color name="difficulty_9">#c7463b</color>
+  <color name="difficulty_10">#d03a3c</color>
+  <color name="iconDefault">#757575</color>
+
+  <!-- Percentage colors shared between Khoj and Assessed screen,
+       Need extra attention before changing !-->
+  <color name="percentageColor1">#F44336</color>
+  <color name="percentageColor2">#FF9800</color>
+  <color name="percentageColor3">#FFC107</color>
+  <color name="percentageColor4">#CDDC39</color>
+  <color name="percentageColor5">#8BC34A</color>
+  <color name="percentageColor6">#4CAF50</color>
+  <!-- Percentage colors shared between Khoj and Assessed screen, Need extra attention
+      before changing something!-->
+
+
 </resources>

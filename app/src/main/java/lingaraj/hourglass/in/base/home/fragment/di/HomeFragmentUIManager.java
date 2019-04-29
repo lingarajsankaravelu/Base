@@ -1,17 +1,18 @@
 package lingaraj.hourglass.in.base.home.fragment.di;
 
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
-import butterknife.ButterKnife;
-import butterknife.Unbinder;
 import javax.inject.Inject;
-import lingaraj.hourglass.in.base.lifecycle.ScreenLifecycleTask;
-import lingaraj.hourglass.in.base.ui.ScreenNavigator;
-import lingaraj.hourglass.in.base.utils.ButterKnifeUtils;
+import lingaraj.hourglass.in.base.R;
+import lingaraj.hourglass.in.base.base.lifecycle.ScreenLifecycleTask;
+import lingaraj.hourglass.in.base.base.ScreenNavigator;
+import timber.log.Timber;
 
 public class HomeFragmentUIManager extends ScreenLifecycleTask {
 
   private ScreenNavigator navigator;
-  private Unbinder unbinder;
 
 
   @Inject
@@ -21,11 +22,23 @@ public class HomeFragmentUIManager extends ScreenLifecycleTask {
 
   @Override public void onEnterScope(View view) {
     super.onEnterScope(view);
-    unbinder = ButterKnife.bind(view);
   }
 
   @Override public void onExitScope() {
     super.onExitScope();
-    ButterKnifeUtils.unbind(unbinder);
   }
+
+  @Override public void setToolbarTitles(@NonNull View view, @NonNull String title, @Nullable String subTitle) {
+    super.setToolbarTitles(view, title, subTitle);
+    Toolbar toolbar = (Toolbar) view;
+    toolbar.setTitle(title);
+    if (subTitle!=null){
+      toolbar.setSubtitle(subTitle);
+    }
+    toolbar.setNavigationIcon(R.drawable.ic_baseline_arrow_back_white_24px);
+    toolbar.setNavigationOnClickListener(v -> navigator.onBackPressed());
+    Timber.d("Toolbar set");
+
+  }
+
 }

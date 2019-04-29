@@ -7,4 +7,5 @@ public class Names {
 
   public static final String ASESSED_NETWORKING_REST = "ASSESSED_NETWORKING_REST";
   public static final String BASE_URL = "BASE_URL";
+  public static final String IS_TAB = "IS_TAB";
 }

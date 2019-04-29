@@ -3,7 +3,7 @@ package lingaraj.hourglass.in.base.home.fragment.di;
 import dagger.Binds;
 import dagger.Module;
 import dagger.multibindings.IntoSet;
-import lingaraj.hourglass.in.base.lifecycle.ScreenLifecycleTask;
+import lingaraj.hourglass.in.base.base.lifecycle.ScreenLifecycleTask;
 
 @Module
 public abstract class HomeFragmentScreenModule {

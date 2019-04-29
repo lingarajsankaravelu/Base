@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <dimen name="progress_size">48dp</dimen>
+  <dimen name="fab_margin">16dp</dimen>
+  <dimen name="error_image_width">96dp</dimen>
+  <dimen name="error_image_height">96dp</dimen>
+  <dimen name="retry_text_size">16sp</dimen>
+  <dimen name="auth_input_margin_top">8dp</dimen>
+
+
+
+</resources>
