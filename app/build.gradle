@@ -44,10 +44,6 @@ dependencies {
     implementation "android.arch.lifecycle:extensions:$archComponentsVersion"
     implementation "com.android.support:multidex:$multidexVersion"
 
-    //implementation "com.google.firebase:firebase-core:$firebaseVersion"
-    //implementation "com.google.firebase:firebase-crash:$firebaseCrashVersion"
-    //implementation "com.google.firebase:firebase-messaging:$firebaseMessagesVersion"
-
     implementation "android.arch.persistence.room:runtime:$archComponentsVersion"
     implementation "android.arch.persistence.room:rxjava2:$archComponentsVersion"
     annotationProcessor "android.arch.persistence.room:compiler:$archComponentsVersion"

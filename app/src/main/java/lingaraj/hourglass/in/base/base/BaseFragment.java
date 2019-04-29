@@ -61,9 +61,7 @@ public abstract class BaseFragment extends Fragment {
         }
     }
 
-    protected void onViewBound(View view) {
-
-    }
+    protected abstract void onViewBound(View view);
 
     @LayoutRes
     protected abstract int layoutRes();
