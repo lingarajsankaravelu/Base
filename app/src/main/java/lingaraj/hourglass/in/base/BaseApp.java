@@ -15,15 +15,16 @@ public class BaseApp  extends Application {
 
   @Override public void onCreate() {
     super.onCreate();
-
-    if(BuildConfig.DEBUG) {
-      Timber.plant(new Timber.DebugTree());
-    }
     AndroidThreeTen.init(this);
+    setUpTimber();
     component = DaggerApplicationComponent.builder().applicationModule(new ApplicationModule(this)).build();
     component.inject(this);
   }
 
+  private void setUpTimber() {
+    Timber.plant(BuildConfig.DEBUG?new Timber.DebugTree():new TimberReleaseTree());
+
+  }
 
   public ActivityInjector getActivityInjector() {
     return activityInjector;
