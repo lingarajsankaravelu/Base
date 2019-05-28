@@ -38,11 +38,6 @@ local.properties
 ehthumbs.db
 Thumbs.db
 
-app/.idea/workspace.xml
-build/intermediates/dex-cache/cache.xml
-build/android-profile/*
-build/generated/*
-build/intermediates/progurad-files/*
+# Unnecessary Build files
+/build/
 
-/openCVLibrary310
-openCVLibrary310/build.gradle
