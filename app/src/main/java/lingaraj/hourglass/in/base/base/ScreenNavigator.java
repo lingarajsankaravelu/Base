@@ -1,8 +1,6 @@
 package lingaraj.hourglass.in.base.base;
 
-import android.support.v4.app.Fragment;
-
-import java.util.List;
+import androidx.fragment.app.Fragment;
 
 public interface ScreenNavigator {
 

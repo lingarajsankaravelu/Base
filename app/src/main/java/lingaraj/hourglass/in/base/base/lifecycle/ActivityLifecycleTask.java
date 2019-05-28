@@ -1,6 +1,6 @@
 package lingaraj.hourglass.in.base.base.lifecycle;
 
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 
 public abstract class ActivityLifecycleTask {
 

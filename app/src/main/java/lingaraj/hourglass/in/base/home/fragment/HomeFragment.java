@@ -1,14 +1,12 @@
 package lingaraj.hourglass.in.base.home.fragment;
 
-import android.databinding.DataBindingUtil;
+import androidx.databinding.DataBindingUtil;
 import android.os.Bundle;
-import android.support.v4.widget.SwipeRefreshLayout;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import android.view.View;
-import java.util.UUID;
 import lingaraj.hourglass.in.base.R;
 import lingaraj.hourglass.in.base.base.BaseFragment;
 import lingaraj.hourglass.in.base.databinding.FragmentMainBinding;
-import lingaraj.hourglass.in.base.utils.Constants;
 import lingaraj.hourglass.in.base.utils.General;
 
 public class HomeFragment extends BaseFragment implements SwipeRefreshLayout.OnRefreshListener {

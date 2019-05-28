@@ -1,7 +1,7 @@
 package lingaraj.hourglass.in.base.base;
 
 import android.app.Activity;
-import android.support.annotation.LayoutRes;
+import androidx.annotation.LayoutRes;
 
 public interface ActivityViewInterceptor {
 

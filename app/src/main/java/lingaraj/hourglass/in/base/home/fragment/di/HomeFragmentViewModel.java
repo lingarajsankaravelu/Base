@@ -1,6 +1,6 @@
 package lingaraj.hourglass.in.base.home.fragment.di;
 
-import android.arch.lifecycle.ViewModel;
+import androidx.lifecycle.ViewModel;
 
 public class HomeFragmentViewModel extends ViewModel {
 

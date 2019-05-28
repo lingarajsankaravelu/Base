@@ -2,7 +2,7 @@ package lingaraj.hourglass.in.base.di.injectors;
 
 import android.app.Activity;
 
-import android.support.v4.app.Fragment;
+import androidx.fragment.app.Fragment;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;

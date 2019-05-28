@@ -1,6 +1,6 @@
 package lingaraj.hourglass.in.base.home.di;
 
-import android.support.v4.app.Fragment;
+import androidx.fragment.app.Fragment;
 import dagger.Binds;
 import dagger.Module;
 import dagger.android.AndroidInjector;

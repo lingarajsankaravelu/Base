@@ -1,7 +1,7 @@
 package lingaraj.hourglass.in.base.di.injectors;
 
 import android.app.Activity;
-import android.support.v4.app.Fragment;
+import androidx.fragment.app.Fragment;
 
 public class Injector {
 

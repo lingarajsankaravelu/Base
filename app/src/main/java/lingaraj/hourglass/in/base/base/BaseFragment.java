@@ -2,9 +2,10 @@ package lingaraj.hourglass.in.base.base;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.support.annotation.LayoutRes;
-import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
+import androidx.annotation.LayoutRes;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,7 +14,7 @@ import java.util.Set;
 import javax.inject.Inject;
 import lingaraj.hourglass.in.base.di.injectors.Injector;
 import lingaraj.hourglass.in.base.base.lifecycle.ScreenLifecycleTask;
-import org.jetbrains.annotations.NotNull;
+
 
 public abstract class BaseFragment extends Fragment {
 
@@ -33,7 +34,7 @@ public abstract class BaseFragment extends Fragment {
 
     @Nullable
     @Override
-    public View onCreateView(@NotNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(layoutRes(), container, false);
         onViewBound(view);
         for (ScreenLifecycleTask task : screenLifecycleTasks) {
