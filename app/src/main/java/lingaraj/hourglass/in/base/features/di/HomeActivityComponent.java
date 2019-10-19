@@ -8,7 +8,8 @@ import lingaraj.hourglass.in.base.di.modules.ActivityViewInterceptorModule;
 import lingaraj.hourglass.in.base.di.modules.NavigationModule;
 
 @ActivityScope
-@Subcomponent(modules = { ActivityViewInterceptorModule.class,HomeBindingModule.class,
+@Subcomponent(modules = { ActivityViewInterceptorModule.class
+    ,HomeBindingModule.class,
     NavigationModule.class })
 public abstract interface HomeActivityComponent extends AndroidInjector<HomeActivity> {
 

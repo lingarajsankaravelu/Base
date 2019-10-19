@@ -13,8 +13,10 @@ import lingaraj.hourglass.in.base.R;
 import lingaraj.hourglass.in.base.base.AppSharedPreference;
 import lingaraj.hourglass.in.base.base.BaseFragment;
 import lingaraj.hourglass.in.base.base.BaseViewModelFactory;
+import lingaraj.hourglass.in.base.base.ScreenNavigator;
 import lingaraj.hourglass.in.base.database.location.Location;
 import lingaraj.hourglass.in.base.databinding.FragmentLocationsBinding;
+import lingaraj.hourglass.in.base.features.detaillocationinfo.LocationDetailFragment;
 import lingaraj.hourglass.in.base.utils.General;
 import timber.log.Timber;
 
@@ -24,6 +26,7 @@ public class LocationsFragment extends BaseFragment {
   private FragmentLocationsBinding binding;
   @Inject BaseViewModelFactory viewModelFactory;
   @Inject AppSharedPreference preference;
+  @Inject ScreenNavigator navigator;
   private boolean loading = true;
   private LocationsViewModel view_model;
   private LocationsAdapter adapter;
@@ -59,7 +62,7 @@ public class LocationsFragment extends BaseFragment {
   }
 
   private void init() {
-    adapter = new LocationsAdapter(this.mcontext,new ItemClick());
+    adapter = new LocationsAdapter(this.mcontext,new ItemClick(),new FavouriteClick());
     binding.dataGroup.setVisibility(View.GONE);
     binding.locations.setHasFixedSize(false);
     binding.locations.setLayoutManager(new LinearLayoutManager(this.mcontext,LinearLayoutManager.VERTICAL,false));
@@ -109,6 +112,21 @@ public class LocationsFragment extends BaseFragment {
       Timber.d("Clicked:"+position);
       Location data = adapter.getItem(position);
       view_model.userSelectedLocation(data);
+      showDetailedScreen();
+    }
+  }
+
+  private void showDetailedScreen() {
+    navigator.showFragment(LocationDetailFragment.newInstance());
+    Timber.d("Showing Location Details Fragment");
+  }
+
+  public class FavouriteClick implements View.OnClickListener {
+    @Override
+    public void onClick(View v) {
+      int position = binding.locations.getChildAdapterPosition(v);
+      adapter.marked(position);
+
     }
   }
 }

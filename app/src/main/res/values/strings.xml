@@ -6,7 +6,7 @@
   <string name="dummy_date">Oct 21 - 29 2019</string>
   <string name="lorem_ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur fermentum eros ut vestibulum posuere. Curabitur nisl felis, ornare volutpat urna et, consequat egestas mi. Nulla at sapien tincidunt, lobortis nibh sit amet, malesuada turpis. Curabitur vel dolor at mi lobortis pulvinar. Aliquam ultricies enim id finibus scelerisque. Curabitur enim libero, pharetra nec urna finibus, sagittis commodo nulla. Quisque vel ante eu lorem auctor laoreet.</string>
   <string name="book_now">Book Now</string>
-  <string name="price_per_person">Price per person \n \t <b>&#x20B9; 55000</b></string>
+  <string name="price_per_person">Price per person \n \t <b>&#x20B9; %1$s</b></string>
   <string name="user_name">Hi %1$s,</string>
   <string name="welcome_to_travel_mate">Welcome to Travel Mate</string>
 </resources>

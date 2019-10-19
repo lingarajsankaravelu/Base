@@ -7,6 +7,7 @@ import dagger.Module;
 import dagger.multibindings.IntoMap;
 import lingaraj.hourglass.in.base.base.BaseViewModelFactory;
 import lingaraj.hourglass.in.base.di.ViewModelKey;
+import lingaraj.hourglass.in.base.features.travelmatehome.LocationsViewModel;
 
 /**
  * All ViewModels binded here with dagger
@@ -20,7 +21,7 @@ public abstract class ViewModelsModule {
 
   @Binds
   @IntoMap
-  @ViewModelKey(HomeFragmentViewModel.class)
-  abstract ViewModel bindsHomeFargmentViewModel(HomeFragmentViewModel homeFragmentViewModel);
+  @ViewModelKey(LocationsViewModel.class)
+  abstract ViewModel bindsLocationViewModel(LocationsViewModel homeFragmentViewModel);
 
 }
