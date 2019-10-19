@@ -1,9 +1,9 @@
-package lingaraj.hourglass.in.base.home.di;
+package lingaraj.hourglass.in.base.features.di;
 
 import dagger.Subcomponent;
 import dagger.android.AndroidInjector;
 import lingaraj.hourglass.in.base.di.ActivityScope;
-import lingaraj.hourglass.in.base.home.HomeActivity;
+import lingaraj.hourglass.in.base.features.HomeActivity;
 import lingaraj.hourglass.in.base.di.modules.ActivityViewInterceptorModule;
 import lingaraj.hourglass.in.base.di.modules.NavigationModule;
 

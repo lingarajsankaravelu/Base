@@ -1,9 +1,9 @@
-package lingaraj.hourglass.in.base.home;
+package lingaraj.hourglass.in.base.features;
 
 import androidx.fragment.app.Fragment;
 import lingaraj.hourglass.in.base.R;
 import lingaraj.hourglass.in.base.base.BaseActivity;
-import lingaraj.hourglass.in.base.home.fragment.HomeFragment;
+import lingaraj.hourglass.in.base.features.travelmatehome.LocationsFragment;
 import timber.log.Timber;
 
 public class HomeActivity extends BaseActivity {
@@ -14,6 +14,6 @@ public class HomeActivity extends BaseActivity {
   }
 
   @Override public Fragment initialScreen() {
-    return HomeFragment.newInstance();
+    return LocationsFragment.newInstance();
   }
 }

@@ -7,8 +7,8 @@ import dagger.Module;
 import dagger.android.ActivityKey;
 import dagger.android.AndroidInjector;
 import dagger.multibindings.IntoMap;
-import lingaraj.hourglass.in.base.home.HomeActivity;
-import lingaraj.hourglass.in.base.home.di.HomeActivityComponent;
+import lingaraj.hourglass.in.base.features.HomeActivity;
+import lingaraj.hourglass.in.base.features.di.HomeActivityComponent;
 
 /**
  * All  activities component get binded to dagger map here.

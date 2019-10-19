@@ -8,8 +8,10 @@ import lingaraj.hourglass.in.base.utils.Constants;
 public class AppSharedPreference {
 
   private SharedPreferences mSharedPreference;
+
+
   public static class Keys {
-    static final String KEY_TOKEN = "SERVER_TOKEN";
+    static final String KEY_USER = "USER_NAME";
   }
 
   public AppSharedPreference(Context applicationContext){
@@ -21,12 +23,12 @@ public class AppSharedPreference {
   }
   }
 
-  public void setToken(String token){
-    mSharedPreference.edit().putString(Keys.KEY_TOKEN,token).apply();
+  public void setUserName(String token){
+    mSharedPreference.edit().putString(Keys.KEY_USER,token).apply();
   }
 
-  public String getToken(){
-   return mSharedPreference.getString(Keys.KEY_TOKEN,null);
+  public String getUserName(){
+   return mSharedPreference.getString(Keys.KEY_USER,null);
   }
 
 
