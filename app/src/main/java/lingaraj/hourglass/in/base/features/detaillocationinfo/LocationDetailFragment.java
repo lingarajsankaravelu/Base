@@ -6,6 +6,7 @@ import android.view.View;
 import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
 import com.google.android.material.snackbar.Snackbar;
+import com.google.gson.Gson;
 import com.squareup.picasso.Picasso;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.CompositeDisposable;
@@ -18,22 +19,27 @@ import lingaraj.hourglass.in.base.database.location.Location;
 import lingaraj.hourglass.in.base.databinding.FragmentLocationDetailsBinding;
 import lingaraj.hourglass.in.base.features.travelmatehome.LocationsViewModel;
 import lingaraj.hourglass.in.base.utils.General;
+import timber.log.Timber;
 
 public class LocationDetailFragment extends BaseFragment implements View.OnClickListener {
 
+  public static final String TAG = "LOCDETAILFRAG";
   private FragmentLocationDetailsBinding binding;
+  private long rowId;
 
-  public static LocationDetailFragment newInstance() {
+  public static LocationDetailFragment newInstance(long rowId) {
      LocationDetailFragment fragment = new LocationDetailFragment();
     Bundle args = General.generateBaseBundle();
+    args.putLong(TAG,rowId);
     fragment.setArguments(args);
     return fragment;
   }
 
   @Inject BaseViewModelFactory viewModelFactory;
   private LocationsViewModel viewModel;
-  private CompositeDisposable disposable;
+  private CompositeDisposable disposable = new CompositeDisposable();
   private Context mcontext;
+  private Location location;
   @Override public void onAttach(Context context) {
     super.onAttach(context);
     this.mcontext = context;
@@ -53,22 +59,22 @@ public class LocationDetailFragment extends BaseFragment implements View.OnClick
   @Override public void onActivityCreated(@Nullable Bundle savedInstanceState) {
     super.onActivityCreated(savedInstanceState);
     binding.bookNow.setOnClickListener(this);
+    Bundle bundle  = getArguments();
+    long rowId =  bundle.getLong(TAG);
     setObservers();
+    viewModel.requestUserSelectedLocation(rowId);
 
   }
 
   private void setObservers() {
-    disposable.add(viewModel.getUserSelectedLocation().observeOn(Schedulers.io())
-        .subscribeOn(AndroidSchedulers.mainThread())
-        .subscribe(location -> {
-            if (location!=null){
-              setReceivedDetails(location);
-            }
-        }));
+    disposable.add(viewModel.getUserSelectedLocation()
+        .observeOn(AndroidSchedulers.mainThread())
+        .subscribe(this::setReceivedDetails));
   }
 
   private void setReceivedDetails(Location location) {
-    Picasso.with(this.mcontext).load(location.getUrl()).into(binding.imageView);
+    Timber.d("Choosen Location:"+new Gson().toJson(location));
+    Picasso.with(this.mcontext).load(location.getUrl()).resize(200,2000).into(binding.imageView);
     binding.date.setText(location.getDate());
     binding.place.setText(location.getPlace());
     binding.detailedText.setText(location.getDescription());

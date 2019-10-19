@@ -14,6 +14,7 @@ import java.util.List;
 import lingaraj.hourglass.in.base.R;
 import lingaraj.hourglass.in.base.database.location.Location;
 import lingaraj.hourglass.in.base.databinding.LayoutLocationBinding;
+import timber.log.Timber;
 
 public class LocationsAdapter extends RecyclerView.Adapter<LocationsAdapter.ViewHolder> {
 
@@ -67,8 +68,7 @@ public class LocationsAdapter extends RecyclerView.Adapter<LocationsAdapter.View
     else {
       this.marked.add(position);
     }
-    notifyDataSetChanged();
-
+    notifyItemChanged(position);
   }
 
   public class ViewHolder extends RecyclerView.ViewHolder{
@@ -88,6 +88,7 @@ public class LocationsAdapter extends RecyclerView.Adapter<LocationsAdapter.View
 
   public void addItem(Location location){
     items.add(location);
+    Timber.d("Items Size:"+items.size());
     notifyDataSetChanged();
   }
 }

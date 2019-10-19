@@ -8,6 +8,8 @@ import android.view.View;
 import androidx.lifecycle.Observer;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import com.google.android.material.snackbar.Snackbar;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.schedulers.Schedulers;
 import javax.inject.Inject;
 import lingaraj.hourglass.in.base.R;
 import lingaraj.hourglass.in.base.base.AppSharedPreference;
@@ -64,21 +66,24 @@ public class LocationsFragment extends BaseFragment {
   private void init() {
     adapter = new LocationsAdapter(this.mcontext,new ItemClick(),new FavouriteClick());
     binding.dataGroup.setVisibility(View.GONE);
-    binding.locations.setHasFixedSize(false);
+    binding.locations.setHasFixedSize(true);
     binding.locations.setLayoutManager(new LinearLayoutManager(this.mcontext,LinearLayoutManager.VERTICAL,false));
     binding.locations.setAdapter(adapter);
 
   }
 
   private void setObservers() {
-    view_model.getLocationData().observe(this, new Observer<Location>() {
+    view_model.getLocationData().observeOn(AndroidSchedulers.mainThread()).subscribe(location -> {
+      if (location!=null){
+        addLocation(location);
+      }
+
+    });
+   /* view_model.getLocationData().observe(this, new Observer<Location>() {
       @Override public void onChanged(Location location) {
-        if (location!=null){
-          addLocation(location);
-        }
 
       }
-    });
+    }); */
     view_model.getMessages().observe(this, new Observer<String>() {
       @Override public void onChanged(String message) {
         if (message!=null){
@@ -95,6 +100,7 @@ public class LocationsFragment extends BaseFragment {
   }
 
   private void addLocation(Location location) {
+    Timber.d("Item recieve");
     adapter.addItem(location);
     if (loading){
       loading = false;
@@ -111,20 +117,19 @@ public class LocationsFragment extends BaseFragment {
       int position = binding.locations.getChildAdapterPosition(v);
       Timber.d("Clicked:"+position);
       Location data = adapter.getItem(position);
-      view_model.userSelectedLocation(data);
-      showDetailedScreen();
+      showDetailedScreen(data.getId());
     }
   }
 
-  private void showDetailedScreen() {
-    navigator.showFragment(LocationDetailFragment.newInstance());
+  private void showDetailedScreen(long rowId) {
+    navigator.showFragment(LocationDetailFragment.newInstance(rowId),LocationDetailFragment.TAG);
     Timber.d("Showing Location Details Fragment");
   }
 
   public class FavouriteClick implements View.OnClickListener {
     @Override
     public void onClick(View v) {
-      int position = binding.locations.getChildAdapterPosition(v);
+      int position = binding.locations.getChildAdapterPosition((View) v.getParent());
       adapter.marked(position);
 
     }

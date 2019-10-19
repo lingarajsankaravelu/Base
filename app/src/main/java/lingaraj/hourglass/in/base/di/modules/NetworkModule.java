@@ -25,16 +25,14 @@ public class NetworkModule {
       AppSharedPreference sharedPreference) {
     OkHttpClient.Builder httpClient = new OkHttpClient.Builder();
     httpClient.addInterceptor(logging);
-    if(sharedPreference.getToken()!=null && !sharedPreference.getToken().isEmpty()) {
       httpClient.addNetworkInterceptor(chain -> {
         Request original = chain.request();
-        Request.Builder request_builder = original.newBuilder().addHeader("Authorization", "Bearer " + sharedPreference.getToken());
+        Request.Builder request_builder = original.newBuilder().addHeader("Authorization", "Bearer ");
         Request request = request_builder.build();
         return chain.proceed(request);
       });
-    }
-    httpClient.readTimeout(6, TimeUnit.MILLISECONDS);
-    httpClient.connectTimeout(6, TimeUnit.MILLISECONDS);
+    httpClient.readTimeout(60, TimeUnit.SECONDS);
+    httpClient.connectTimeout(60, TimeUnit.SECONDS);
 
     return httpClient.build();
   }
